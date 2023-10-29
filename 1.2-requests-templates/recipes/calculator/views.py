@@ -21,17 +21,10 @@ DATA = {
     },
 }
 
-def omlet_view(request):
-    servings = int(request.GET.get("servings", 1))
-    for item in DATA['omlet']:
-        DATA['omlet'][item] = DATA['omlet'][item] * servings
-    context = {'recipe':DATA['omlet']}
 
-    return render(request, 'calculator/index.html', context)
-
-def pasta_view(request):
+def dish_view(request, dish):
     servings = int(request.GET.get("servings", 1))
-    for item in DATA['pasta']:
-        DATA['pasta'][item] = float(DATA['pasta'][item] * servings)
-    context = {'recipe':DATA['pasta']}
+    for item in DATA[dish]:
+        DATA[dish][item] = DATA[dish][item] * servings
+    context = {'recipe': DATA[dish]}
     return render(request, 'calculator/index.html', context)
