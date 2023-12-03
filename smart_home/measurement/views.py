@@ -3,15 +3,9 @@
 
 from .models import Sensor, Measurement
 from .serializers import MeasurementSerializer, SensorDetailSerializer, SensorSerializer
-#from rest_framework.generics import ListCreateAPIView, RetrieveUpdateAPIView, CreateAPIView
 from rest_framework import generics
-from rest_framework.response import Response
 
 class SensorView(generics.ListCreateAPIView):
-    queryset = Sensor.objects.all()
-    serializer_class = SensorSerializer
-
-class SensorAdjust(generics.RetrieveUpdateAPIView):
     queryset = Sensor.objects.all()
     serializer_class = SensorSerializer
 
