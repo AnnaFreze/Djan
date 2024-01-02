@@ -72,7 +72,7 @@ Content-Type: application/json
     {
       "product": 2,
       "quantity": 100,
-      "price": 130.80
+      "price": 130
     },
     {
       "product": 3,
